@@ -1,21 +1,55 @@
-import React from "react";
+export {
+  default as withGoogleMap,
+} from "./components/withGoogleMap";
 
-import ReactDOM from "react-dom";
+export {
+  default as GoogleMap,
+} from "./components/GoogleMap";
 
-const Root = (
-  window.ReactGoogleMapsAsync ?
-  require(`./app/AsyncApp`).default :
-  /*
-   * If you're not using async,
-   *
-   * Add script src="https://maps.googleapis.com/maps/api/js" to your HTML to provide google.maps reference
-   */
-  require(`./app/App`).default
-);
+export {
+  default as Marker,
+} from "./components/Marker";
 
-import "./index.css";
+export {
+  default as Rectangle,
+} from "./components/Rectangle";
 
-ReactDOM.render(
-  <Root />,
-  document.getElementById(`root`)
-);
+export {
+  default as Polyline,
+} from "./components/Polyline";
+
+export {
+  default as Polygon,
+} from "./components/Polygon";
+
+export {
+  default as Circle,
+} from "./components/Circle";
+
+export {
+  default as KmlLayer,
+} from "./components/KmlLayer";
+
+export {
+  default as FusionTablesLayer,
+} from "./components/FusionTablesLayer";
+
+export {
+  default as TrafficLayer,
+} from "./components/TrafficLayer";
+
+export {
+  default as DirectionsRenderer,
+} from "./components/DirectionsRenderer";
+
+export {
+  default as InfoWindow,
+} from "./components/InfoWindow";
+
+export {
+  default as OverlayView,
+} from "./components/OverlayView";
+
+export {
+  default as StreetViewPanorama,
+} from "./components/StreetViewPanorama";
