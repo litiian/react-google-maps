@@ -261,6 +261,12 @@ function getInstanceFromComponent(component) {
   return component.state[MARKER];
 }
 
+
+/**
+ *
+ */
+export const Marker = createReactClass({ render: _.constant(false) })
+
 export default _.flowRight(
   createReactClass,
   enhanceElement(getInstanceFromComponent, publicMethodMap, eventMap, controlledPropUpdaterMap),
