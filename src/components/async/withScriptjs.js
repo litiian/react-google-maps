@@ -45,7 +45,7 @@ export default function withScriptjs(WrappedComponent) {
         loadingElement,
         googleMapURL,
       } = this.props;
-      invariant(!!loadingElement && !!googleMapURL,
+      invariant(!_.isNil(loadingElement) && _.isString(googleMapURL),
 `Required props loadingElement or googleMapURL is missing. You need to provide both of them.`
       );
     }

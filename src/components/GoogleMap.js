@@ -1,4 +1,3 @@
-/* global google */
 import _ from "lodash";
 
 import invariant from "invariant";
