@@ -261,22 +261,6 @@ function getInstanceFromComponent(component) {
   return component.state[MARKER];
 }
 
-
-/**
- *
- */
-export class Marker extends React.PureComponent {
-
-  static propTypes = {
-    ...controlledPropTypes,
-    ...defaultUncontrolledPropTypes,
-  }
-
-  render() {
-    return false
-  }
-}
-
 export default _.flowRight(
   createReactClass,
   enhanceElement(getInstanceFromComponent, publicMethodMap, eventMap, controlledPropUpdaterMap),

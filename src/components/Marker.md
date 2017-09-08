@@ -12,44 +12,12 @@ import {
 import withScriptjs from "react-google-maps/lib/async/withScriptjs";
 
 const MapWithAMarker = compose(
-  withProps({
-    googleMapURL: "https://maps.googleapis.com/maps/api/js?v=3.exp",
-    loadingElement: <div style={{ height: `100%` }} />,
-    containerElement: <div style={{ height: `100%` }} />,
-    mapElement: <div style={{ height: `100%` }} />,
-  }),
-  withScriptjs,
-  withGoogleMap,
-)(props =>
-  <GoogleMap
-    defaultZoom={8}
-    defaultCenter={{ lat: -34.397, lng: 150.644 }}
-  >
-    <Marker
-      position={{ lat: -34.397, lng: 150.644 }}
-    />
-  </GoogleMap>
-);
-```
-
-### Map with a Marker
-
-```javascript
-const { compose, withProps } = require("recompose");
-const {
-  withGoogleMap,
-  GoogleMap,
-  Marker,
-} = require("../index");
-const { default: withScriptjs } = require("./async/withScriptjs");
-
-const MapWithAMarker = compose(
-  withProps({
-    googleMapURL: "https://maps.googleapis.com/maps/api/js?v=3.exp",
-    loadingElement: <div style={{ height: `100%` }} />,
-    containerElement: <div style={{ height: `200px` }} />,
-    mapElement: <div style={{ height: `100%` }} />,
-  }),
+  // withProps({
+  //   googleMapURL: "https://maps.googleapis.com/maps/api/js?v=3.exp",
+  //   loadingElement: <div style={{ height: `100%` }} />,
+  //   containerElement: <div style={{ height: `200px` }} />,
+  //   mapElement: <div style={{ height: `100%` }} />,
+  // }),
   withScriptjs,
   withGoogleMap
 )(props =>
@@ -63,5 +31,49 @@ const MapWithAMarker = compose(
   </GoogleMap>
 );
 
-<MapWithAMarker />
+<MapWithAMarker
+  googleMapURL="https://maps.googleapis.com/maps/api/js?v=3.exp"
+  loadingElement={<div style={{ height: `100%` }} />}
+  containerElement={<div style={{ height: `200px` }} />}
+  mapElement={<div style={{ height: `100%` }} />}
+/>
+```
+
+### Map with a Marker
+
+```js
+const { compose, withProps } = require("recompose");
+const {
+  withGoogleMap,
+  GoogleMap,
+  Marker,
+} = require("../index");
+const { default: withScriptjs } = require("./async/withScriptjs");
+
+const MapWithAMarker = compose(
+  // withProps({
+  //   googleMapURL: "https://maps.googleapis.com/maps/api/js?v=3.exp",
+  //   loadingElement: <div style={{ height: `100%` }} />,
+  //   containerElement: <div style={{ height: `200px` }} />,
+  //   mapElement: <div style={{ height: `100%` }} />,
+  // }),
+  withScriptjs,
+  withGoogleMap
+)(props =>
+  <GoogleMap
+    defaultZoom={8}
+    defaultCenter={{ lat: -34.397, lng: 150.644 }}
+  >
+    <Marker
+      position={{ lat: -34.397, lng: 150.644 }}
+    />
+  </GoogleMap>
+);
+
+<MapWithAMarker
+  googleMapURL="https://maps.googleapis.com/maps/api/js?v=3.exp"
+  loadingElement={<div style={{ height: `100%` }} />}
+  containerElement={<div style={{ height: `200px` }} />}
+  mapElement={<div style={{ height: `100%` }} />}
+/>
 ```
